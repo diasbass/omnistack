@@ -10,7 +10,6 @@ nunjucks.configure("views", {
 });
 
 app.use(express.urlencoded({ extended: false }));
-
 app.set("view engine", "njk");
 
 const users = ["Usuario A", "Usuario B", "Usuario C"];
