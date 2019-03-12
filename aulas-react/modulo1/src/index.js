@@ -4,11 +4,7 @@ import { render } from "react-dom";
 
 class Button extends Component {
   render() {
-    return (
-      <a href="" onClick={this.props.onClick}>
-        {this.props.children}
-      </a>
-    );
+    return <button onClick={this.props.onClick}>{this.props.children}</button>;
   }
 }
 
@@ -22,18 +18,17 @@ Button.propTypes = {
 };
 
 class App extends Component {
-  handleClick() {
-    alert("Botão clicado");
-  }
+  state = {
+    counter: 0
+  };
+  handleClick = () => {
+    this.setState({ counter: this.state.counter + 1 });
+  };
   render() {
     return (
       <Fragment>
-        <h1>teste</h1>
-        <Button
-          onClick={() => {
-            alert("Button 1");
-          }}
-        />
+        <h1>{this.state.counter}</h1>
+        <Button onClick={this.handleClick}>Somar</Button>
       </Fragment>
     );
   }
