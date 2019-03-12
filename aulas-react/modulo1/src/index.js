@@ -1,21 +1,6 @@
 import React, { Component, Fragment } from "react";
-import PropTypes from "prop-types";
 import { render } from "react-dom";
-
-class Button extends Component {
-  render() {
-    return <button onClick={this.props.onClick}>{this.props.children}</button>;
-  }
-}
-
-Button.defaultProps = {
-  children: "Salvar"
-};
-
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  children: PropTypes.string
-};
+import Button from "./Button";
 
 class App extends Component {
   state = {
